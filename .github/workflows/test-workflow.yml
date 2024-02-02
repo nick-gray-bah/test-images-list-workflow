@@ -1,15 +1,12 @@
-Name: Testing calling external repo workflow
-
 
 on: 
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run encrypted artifact job
-        uses: nick-gray-bah/image-host/.github/workflows/test-encrypted-artifact.yaml@main
+  publish-techdocs:
+    name: Publish docs
+    uses: nick-gray-bah/image-host/.github/workflows/test-encrypted-artifact.yaml@main
+    with:
+      name: test-file
+      file: test-file.txt
+    secrets: inherit
