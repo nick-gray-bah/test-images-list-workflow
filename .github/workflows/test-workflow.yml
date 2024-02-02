@@ -11,8 +11,8 @@ on:
         required: true
 
 jobs:
-  publish-techdocs:
-    name: Publish docs
+  test-workflow:
+    name: test external workflow call
     uses: nick-gray-bah/image-host/.github/workflows/test-encrypted-artifact.yaml@main
     with:
       name: ${{ inputs.name }}
